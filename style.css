@@ -846,6 +846,11 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 
     font-size: 1.1rem;
     font-weight: 400;
+    border-bottom: 1px solid transparent;
+}
+
+.footer a:hover {
+    border-bottom: 1px solid #4F9A94;
 }
 
 .footer h4 {
@@ -863,6 +868,8 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 .footer a {
     text-decoration: none;
     color: #4F9A94;
+    
+    border-bottom: 1px solid transparent;
 
 }
 
