@@ -18,6 +18,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 /*  MAIN CONTENT -------------------------------------- */
 .hero {
     margin: 0;
+    
   
 }
 
@@ -96,6 +97,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
     margin:  auto;
+    justify-items: center;
     padding: 120px 0;
     width: 80%;      
 }
@@ -120,6 +122,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     justify-content: center;
     align-items: center; 
     padding: 0 0;
+    
 }
 
 .hero .row .text-main h1 {
@@ -442,6 +445,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     font-weight: 900;
     color: #f4f9f4;
     padding-right: 120px;
+    
 }
 
 .instructorContainer .instructorInfo p {
@@ -488,7 +492,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 
 .expContainer {
     margin:0;
-    padding: 0;
+    padding: auto;
     display: flex;
     justify-content: center;
     
@@ -502,7 +506,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 .expContainer .expInfo h2 {
     text-transform: uppercase;
     margin: 0;
-    width: 50%;
+    
     text-align: left;
     line-height: 1.3;
     font-size: 4rem;
@@ -567,6 +571,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
     padding: 100px 100px;
 }
 
@@ -581,8 +586,8 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 .priceContainer .priceInfo h2 {
     text-align: center;
     text-transform: uppercase;
-    margin: 0;
-    width: 50%;
+    margin: auto;
+    
     line-height: 1.3;
     font-size: 4rem;
     font-weight: 900;
@@ -602,8 +607,12 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 
 .priceContainer .priceSelect {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    align-items: center;
     column-gap: 100px;
+    row-gap: 50px;
+    width: 100%;
     padding: 50px 0 0 0;
 
 }
@@ -614,6 +623,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 350px;
     padding-bottom: 30px;
     border-radius: 10px;
     transition: 500ms ease-out;
@@ -717,6 +727,8 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     color: #4F9A94;
     font-size: 3rem;
     letter-spacing: 2px;
+    line-height: 1.2;
+    text-align: center;
     padding: 0;
     margin: 0;
 }
@@ -757,6 +769,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     font-weight: 900;
     color: #f4f9f4;
     padding: 0 0 10px 0;
+    line-height: 1;
 }
 
 .newsletterContainer .newsletterInfo p {
@@ -830,6 +843,7 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 .footer .footerSection {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     
     padding: 100px 0;
     width: 90%;
@@ -963,6 +977,10 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
             padding: 0;
         }
 
+        .priceContainer .priceSelect {
+            column-gap: 500px;
+        }
+
 }
 
 @media (max-width:1200px) {
@@ -973,6 +991,8 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
         background-image: none;
     }
 }
+
+
 
 @media (max-width:1024px) {
     
@@ -1000,6 +1020,9 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     .hero .header .nav ul li {
         margin: auto 20px;
     }
+    
+    
+    
 }
 
 @media (max-width: 620px) {
@@ -1014,6 +1037,59 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
         margin: 0;
         width: 100%;
     }
+
+    .hero .header .nav {
+        display: none;
+    }
+
+    .expContainer .expInfo {
+        padding-left: 40px;
+        display: flex;
+        justify-content: center;
+        padding-right:40px;   
+    }
+
+    .expContainer .expInfo h2 {  
+        margin: 0;
+        text-align: center;
+        padding: 0;   
+    }
+
+    .instructorContainer .instructorInfo {
+        padding: 100px 40px;
+    }
+
+    .instructorContainer .instructorInfo p {
+        text-align: center;
+        
+    }
+
+    .instructorContainer .instructorInfo h2 {
+        margin: auto;
+       padding: 0;
+       
+    }
+
+    .priceContainer  {
+        padding:100px 0;
+        
+    }
+
+    .priceContainer .priceSelect div  {
+        width: 60%;
+        height: auto;
+        
+    }
+
+    .quoteContainer {
+        background-image: none;
+    }
+
+    .newsletterContainer .newsletterInfo h2 {
+        width: auto;
+        padding: 0;
+    }
+
 }
 
 @media (max-width: 496px) {
@@ -1022,6 +1098,25 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
    
     .hero .header .nav ul li {
         margin: 0 10;
+    }
+
+    .hero .row .image-main {
+        display: none;
+        
+    }
+
+    .hero .row {
+        margin: auto;        
+        display: flex;
+        justify-content: center;
+    }
+    
+    .expContainer .expInfo {
+        padding: 100px 0;
+    }
+    
+    .instructorContainer .instructorInfo {
+        padding: 100px 0;
     }
 }
 
