@@ -25,15 +25,20 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 .hero .header {
     height: 132px;
     display: flex;  
+    align-items: center;
+    
 }
 
 .hero .header .logo {
     background-color: #a7d7c5 ;
     width: 120px;
     margin-left: 30px;
+    height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+  
 }
 
 .hero .header .logo .logoImage {
@@ -93,6 +98,145 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
 
 }
 
+/* BURGER MENU------------------------------------ */
+/* BURGER MENU------------------------------------ */
+/* BURGER MENU------------------------------------ */
+
+.burgerAll {
+    visibility: visible;
+}
+
+.burgerOpen {
+    height: 70;
+    width: 70;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: 1000ms ease-out;
+    transform: rotate(0deg);
+    opacity: 1;
+    
+}
+
+.burgerExit {
+    height: 70;
+    width: 70;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: 1000ms ease-in;
+    
+}
+
+.burgerExit .line-4 {
+    position: absolute;
+    transform: rotatez(-45deg);
+}
+
+.burgerExit .line-5 {
+    position: absolute;
+    transform: rotatez(45deg);
+}
+
+.burgerLine {
+    width: 100%;
+    height: 10px;
+    background-color:#4F9A94;
+    border-radius: 5px;
+}
+
+.burgerNav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 200px;
+    right: -200;
+    top:100px;
+    transition: 1000ms ease-out;
+    
+}
+
+.burgerNav ul {
+    display: inline-block;
+    
+    width: 100%;   
+}
+
+.burgerNav .burgerLink { 
+    position: relative;  
+}
+
+.burgerNav .burgerLink::before, .burgerLink::after{
+     content: "";
+     width: 100%;
+     height: 2px;
+     background-color: white;
+     position: absolute;
+     left:0;
+     transform: scaleX(0);
+     transition: 500ms ease-out;
+}
+
+.burgerNav .burgerLink::after {
+    bottom: 0;
+    transform-origin: left;
+}
+
+.burgerNav .burgerLink::before {
+    top: 0;
+    transform-origin: right;
+}
+
+.burgerNav .burgerLink:hover::before,
+.burgerNav .burgerLink:hover::after {
+    transform: scaleX(1);
+}
+
+
+.burgerNav ul {
+    margin: 0;
+    list-style: none;
+    padding:0;
+    text-align: center;
+ 
+    
+}
+
+.burgerNav ul div {
+    
+    border-radius: 50px 0 0 50px;
+    background-color: #4F9A94;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.burgerNav ul div:hover {
+    background-color: #62b1aa;
+}
+
+.burgerNav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* BURGER MENU------------------------------------ */
+/* BURGER MENU------------------------------------ */
+/* BURGER MENU------------------------------------ */
 .hero .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
@@ -300,14 +444,17 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     padding: 100px 0 150px;
 }
 
 .statsContainer .statsIntro {
-    display:grid ;
-    grid-template-rows: 40%;
-    justify-items: center;
+    display:flex ;
+   flex-direction: column;
+    justify-content: center;
     width: 40%;
+    margin: 0;
+    padding: 0;
 }
 
 .statsContainer .statsIntro h2 {
@@ -1002,11 +1149,16 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     }
 }
 
-@media (max-width:830px) {
+
+
+@media (max-width:890px) {
     .hero .header .nav {
         padding:0;
         justify-content: space-around;
         
+    }
+    .hero .header .nav ul li {
+        margin: auto 20px;
     }
    
 }
@@ -1025,10 +1177,34 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     
 }
 
-@media (max-width: 620px) {
+@media (max-width:700px) {
+    .hero .header .nav {
+        padding:0;
+        justify-content: space-around;
+        
+    }
+    .hero .header .nav ul li {
+        margin: auto 14px;
+    }
+    
+    
+    
+}
+@media (min-width: 625px) {
+    .burgerAll {
+        visibility: hidden;
+        
+    }
+}
+
+@media (max-width: 625px) {
     .hero .header {
-        flex-wrap: wrap;
-        justify-content: center;
+        
+        justify-content: left;
+        height: 100px;
+        position: relative;
+        top: 0;
+        
     }
     .hero .header .nav {
         margin: 0;
@@ -1036,6 +1212,15 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
     .hero .header .logo {
         margin: 0;
         width: 100%;
+        height: 100px;
+        position: fixed;
+        
+        
+    }
+
+    .hero .header .logo  {
+         justify-content: left;
+         padding-left: 20px ;
     }
 
     .hero .header .nav {
@@ -1090,6 +1275,10 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
         padding: 0;
     }
 
+    .statsContainer .statsIntro {
+        width: 70%;
+    }
+    
 }
 
 @media (max-width: 496px) {
@@ -1119,6 +1308,129 @@ box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.20);
         padding: 100px 0;
     }
 }
+
+@media (max-width:370px){
+    .levelContainer .levelSelect img {
+        background-size: cover;
+        width: 80%;
+    }
+
+    .levelContainer .levelSelect {
+        width: auto;
+    }
+
+    .levelContainer h3 {
+        width: 80%;
+        text-align: center;
+    }
+
+    .instructorContainer .instructorInfo h2 {
+       
+        margin: 0;
+        padding: 0;
+        font-size: 3rem;      
+    }
+
+    .instructorContainer .instructorInfo p {
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    .instructorContainer .instructorInfo .instructorButton button {
+        width: 100%;
+        
+    }
+    
+    .instructorContainer .instructorInfo .instructorButton {
+        margin: 0;
+        padding: 0 60px;
+    }
+
+    .expContainer .expInfo h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 3rem; 
+    }
+
+    .expContainer .expInfo .expButton  {
+        margin: 0;
+        padding: 0 60px;
+    }
+
+    .expContainer .expInfo .expButton button {
+        width: 100%;
+    }
+
+    .priceContainer .priceInfo h2 {
+        font-size: 3rem;
+    }
+
+    .priceContainer .priceSelect h3 {
+        font-size: 1.5rem ;
+    }
+    .priceContainer .priceSelect img {
+        width: 40%;
+    }
+
+    .priceContainer .priceSelect div {
+        width: 80%;
+    }
+
+    .quoteContainer .quoteImage img {
+        width: 80%;
+    }
+
+    .quoteContainer .quoteImage {
+        display: flex;
+        justify-content: center;
+    }
+
+    .quoteContainer .quoteInfo p {
+        font-size: 1.8rem;
+    }
+
+    .quoteContainer .quoteInfo h3 {
+        line-height: 1;
+        font-size: 2.2rem;
+        padding: 30px 0 0 0;
+    }
+
+    .newsletterContainer .newsletterInfo h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 3rem; 
+    }
+
+    .levelContainer .levelIntro h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 3rem; 
+    }
+
+    .levelContainer .levelIntro  {
+        width: 80%;
+    }
+    
+    .levelContainer .levelSelect h3 {
+        margin: 0;
+        line-height: 1;
+        padding: 20px 0;
+    }
+    .levelContainer .levelSelect {
+        grid-template-columns: none;
+    }
+
+    .levelContainer .levelSelect p {
+        width: 70%;
+    }
+
+    .newsletterContainer .newsletterInput {
+        width: 90%;
+        
+    }
+
+}
+
 
 
 
