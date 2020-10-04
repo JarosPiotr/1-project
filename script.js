@@ -5,7 +5,7 @@ const newsletterMail = document.querySelector('.newsletterInput input');
 let navOpen = false
 
 
-function xd() {
+function burgerClick() {
     if (navOpen === false) {
         burgerOpen.style.opacity = 0
         burgerOpen.style.transform = 'rotate(360deg)'
