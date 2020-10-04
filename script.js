@@ -1,7 +1,9 @@
 const burgerExit = document.querySelector('.burgerExit');
 const burgerOpen = document.querySelector('.burgerOpen');
 const navToggle = document.querySelector('.burgerNav');
+const newsletterMail = document.querySelector('.newsletterInput input');
 let navOpen = false
+
 
 function xd() {
     if (navOpen === false) {
@@ -16,8 +18,21 @@ function xd() {
         burgerOpen.style.transform = 'rotate(0deg)'
         burgerExit.style.opacity = 0
         burgerExit.style.transition = '100ms ease-out'
-        navToggle.style.right = -200;
+        navToggle.style.right = -220;
         navOpen = false
     }
 }
+
+newsletterMail.addEventListener('focus',(e)=> {
+    newsletterMail.value ="";
+})
+
+newsletterMail.addEventListener('blur',(e)=> {
+    newsletterMail.value ="Your email";
+})
+
+
+
+
+
 
