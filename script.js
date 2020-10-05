@@ -2,6 +2,7 @@ const burgerExit = document.querySelector('.burgerExit');
 const burgerOpen = document.querySelector('.burgerOpen');
 const navToggle = document.querySelector('.burgerNav');
 const newsletterMail = document.querySelector('.newsletterInput input');
+const scrollAnchor = document.querySelector('.anchor');
 let navOpen = false
 
 
@@ -35,4 +36,18 @@ newsletterMail.addEventListener('blur',(e)=> {
 
 
 
+
+
+
+document.addEventListener('scroll', function scrolling(){
+    if (window.pageYOffset >= 200){
+        console.log('tak')
+        scrollAnchor.style.opacity = 0.5;
+     
+       
+    } else {
+        scrollAnchor.style.opacity = 0;
+    }
+    
+})
 
